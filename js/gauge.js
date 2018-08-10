@@ -1,25 +1,4 @@
-//valores de configuracion
-Region = 'us-east-1';
-Usuario = 'AKIAIH2YM5VYNBNC3BSQ';
-Contraseña = '582ZNAyNGJQi+b6Mk9Tc9kBOc55z6yYdU0hixCTy';
-Tabla = 'BaseDeDatos'
-DeviceName = "HomeIO"
-Partitionkey = "deviceid"
-
-
 var PubliDB;
-
-AWS.config.region = Region; // Region
-AWS.config.credentials = new AWS.Credentials(Usuario, Contraseña); //Acceso con Aws 
-
-
-// function Inicio() {
-//     valor = Math.floor((Math.random() * 100) + 0);
-//     Color = ['rgba(0, 204, 136, 0.7)', 'rgba(236, 236, 236, 0.6)'];
-//     NombreGraf = "myChart";
-//     tipo = "doughnut";
-//     GraficarGauge(valor, "humedad", Color, NombreGraf, tipo);
-// }
 
 
 $(function() {

@@ -37,8 +37,6 @@ function random_rgba() {
     return 'rgba(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ',' + r().toFixed(50) + ')';
 }
 
-
-
 function CrearDispositivo(Place='MyHome') {
         let nombre = NombreDispositivo.value;
         if (nombre) {
