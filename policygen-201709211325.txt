@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iot:GetThingShadow",
+                "iot:UpdateThingShadow",
+                "iot:Publish"
+            ],
+            "Resource": "arn:aws:iot:us-east-1:721874508060:thing/HomeIO"
+        }
+    ]
+}

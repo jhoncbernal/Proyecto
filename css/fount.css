@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?vvunmc');
+  src:  url('fonts/icomoon.eot?vvunmc#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?vvunmc') format('truetype'),
+    url('fonts/icomoon.woff?vvunmc') format('woff'),
+    url('fonts/icomoon.svg?vvunmc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar-times-o:before {
+  content: "\e912";
+}
+.icon-thermometer:before {
+  content: "\e90a";
+}
+.icon-temprature:before {
+  content: "\e90a";
+}
+.icon-calendar:before {
+  content: "\e910";
+}
+.icon-alarm:before {
+  content: "\e911";
+}
+.icon-droplet:before {
+  content: "\e90b";
+}
+.icon-power-cord:before {
+  content: "\e90c";
+}
+.icon-plugin:before {
+  content: "\e90c";
+}
+.icon-extension:before {
+  content: "\e90c";
+}
+.icon-whatsapp:before {
+  content: "\e909";
+}
+.icon-flow-tree:before {
+  content: "\e900";
+}
+.icon-area-graph:before {
+  content: "\e901";
+}
+.icon-browser:before {
+  content: "\e902";
+}
+.icon-cog:before {
+  content: "\e903";
+}
+.icon-database:before {
+  content: "\e904";
+}
+.icon-documents:before {
+  content: "\e905";
+}
+.icon-gauge:before {
+  content: "\e906";
+}
+.icon-home:before {
+  content: "\e907";
+}
+.icon-light-bulb:before {
+  content: "\e90d";
+}
+.icon-rss:before {
+  content: "\e908";
+}
+.icon-stopwatch:before {
+  content: "\e90e";
+}
+.icon-thermometer2:before {
+  content: "\e90f";
+}

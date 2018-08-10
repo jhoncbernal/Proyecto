@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.abajo {
+    background-color: none;
+    color: #e6e7e7;
+    left: 1000;
+}
+#CardSend{
+    margin: 2.5%;
+    text-align: left!important;
+}
+.card-body{
+    margin-left: 8%;
+    
+}
+.barramenu {
+    position: fixed;
+    left: 0;
+    top: 180px;
+    z-index: 200;
+}
+
+.barramenu ul li a {
+    display: inline-block;
+    color: #131c2b;
+    background: #000000;
+    padding: 15px 20px;
+    text-decoration: none;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.barramenu ul li .icon-gauge {
+    background: none;
+}
+
+.barramenu ul li .icon-area-graph {
+    background: none;
+}
+
+.barramenu ul li .icon-calendar {
+    background: none;
+}
+
+.barramenu ul li .icon-cog {
+    background: none;
+}
+
+.barramenu ul li .icon-documents {
+    background: none;
+}
+
+.barramenu ul li a:hover {
+    padding: 10px 50px;
+    background: rgba(21, 12, 204, 0.822);
+}
+
+.label {
+    color: white;
+    padding: 8px;
+}
+
+.info {
+    background-color: rgba(0, 204, 136, 0.7);
+}
+
+
+/* Green */
+
+.verde {
+    background-color: rgba(0, 204, 204, 0.7);
+}
+
+
+/* Green */
+
+.azul {
+    background-color: rgba(0, 167, 245, 0.7);
+}
+
+
+/* Blue */
+
+.amarillo {
+    background-color: rgba(245, 167, 0, 0.6);
+}
+
+
+/* Orange */
+
+.purpura {
+    background-color: rgba(180, 99, 202, 0.685);
+}
+
+
+/* Orange */
+
+.rojo {
+    background-color: rgba(245, 2, 2, 0.7);
+}
+
+
+/* Red */
+
+.negro {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+.gris {
+    color: rgba(155, 145, 145, 0.637);
+}
+
+.azuloscuro {
+    color: rgba(236, 236, 236, 0.6);
+}

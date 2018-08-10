@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="Luz.ico">
+    <title>HomeIO Login</title>
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/fount.css" />
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                    <form name="loginform" onSubmit="return validateForm();" action="index.html" method="GET" aria-required="true">
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Nombre de Usuario</label>
+                        <input name="usr" class="form-control" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter user" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input  name="pword" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember Password
+                            </label>
+                        </div>
+                    </div>
+                    <input class="text-white btn btn-primary btn-block " type="submit" value="Login"/>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+            function validateForm() {
+                var un = document.loginform.usr.value;
+                var pw = document.loginform.pword.value;
+                var username = "admin"; 
+                var password = "admin";
+                if ((un == username) && (pw == password)) {
+                    return true;
+                }
+                else {
+                    alert ("El inicio de sesión no fue exitoso, verifique su nombre de usuario y contraseña");
+                return false;
+                }
+              }
+        </script>
+    <!-- Bootstrap core JavaScript-->
+
+    <!-- Core plugin JavaScript-->
+   </body>
+</html>
