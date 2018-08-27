@@ -3,7 +3,7 @@ function Consulta(Topic, timeRead) {
         var m_respuesta = new Object();
         if (typeof(Topic) != 'undefined') {
             m_respuesta.value = parseFloat(Topic['N']);
-            m_respuesta.time = (new Date((((timeRead) - 18000) * 1000))).toISOString();;
+            m_respuesta.time = (new Date((((timeRead) - 18000) * 1000))).toISOString();
         }
         return m_respuesta;
     } catch (err) {

@@ -23,33 +23,25 @@ client.connect(options);
 
 
 // called when the client connects
-function onConnect() {
-
-    /* Once a connection has been made, make a subscription and send a message.
-     */
-    console.log("onConnect");
+function onConnect(tongle="no") {
 
     dato = document.getElementById("ACCION").value;
 
     try {
-        if (dato!="Opciones"){
-            topic = document.getElementById("topic0").value;
-
-            if (topic == "light") {
-                valor = +(document.getElementById("value" + i).checked);
-                value = (valor + '')
-            } else {               
-                value = document.getElementById("value" + i).value;
-                }
-            
-            enviarmqtt();
+        if (dato=="actualizar"){
+            if (tongle=="si") {
+            enviarmqtt(document.getElementById("topic0").value,(+(document.getElementById("state").checked))+'');
+            } else{  
+            enviarmqtt(document.getElementById("topic0").value,document.getElementById("value").value);
             }
+        }
         
     } catch (err) {
         console.log(err);
     }
 
-    function enviarmqtt() {
+
+    function enviarmqtt(topic,value) {
         if (typeof value !== 'undefined'){
         client.subscribe(topic);
         message = new Paho.MQTT.Message(value);

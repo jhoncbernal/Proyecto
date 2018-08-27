@@ -23,7 +23,9 @@ function getData() {
             },
             ExpressionAttributeValues: {
                 ":iotTopic": { "S": DeviceName },
-            }
+            },
+            ScanIndexForward: false,
+            Limit: 1
         };
         datosBD = dynamodb.query(params, function(err, data) {
             if (err) {

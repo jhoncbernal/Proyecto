@@ -6,14 +6,18 @@ var iotdata = new AWS.IotData({
     apiVersion: '2015-05-28'
 });
 
-function topic0() {
+function topic0(tongle="no") {
 
     try {
+
         Accion = document.getElementById("ACCION").value;            
         topic = document.getElementById("topic0").value;
-        value = document.getElementById("value0").value;
+        value = document.getElementById("value").value;
         if(value){
         document.getElementById("sliderVal0").innerHTML = value;
+        }
+        if(tongle=="si"){
+         value =   (+(document.getElementById("state").checked))+'';
         }
         traer(Accion);
 

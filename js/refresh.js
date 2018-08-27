@@ -3,7 +3,7 @@ $(function () {
 
     Refresh();
     $.ajaxSetup({ cache: false });
-    setInterval(Refresh, 500000);
+    setInterval(DinamicData, 1000);
 });
 
 /* las opciones para nuestro grafico */
@@ -104,4 +104,46 @@ function fecha() {
 
     return rango = document.getElementById("Selecfecha").value;
 
+}
+function DinamicData(){
+
+    try {
+        var params = {
+            TableName: Tabla,
+            KeyConditionExpression: '#id = :iotTopic',
+            ExpressionAttributeNames: {
+                "#id": Partitionkey,
+            },
+            ExpressionAttributeValues: {
+                ":iotTopic": { "S": DeviceName },
+            },
+            ScanIndexForward: false,
+            Limit: 1
+        };
+        datosBD = dynamodb.query(params, function (err, data) {
+            if (err) {
+                console.log(err);
+                return null;
+            } else {
+                // marcadores de posición para las matrices de datos
+                data = data['Items'];
+                    var timestampRead = parseFloat(data[0]['data']['M']['timestamp']['N']);
+                    var n = (data[0]['data']['M']['state']['M']['reported']['M']);
+                    for (var T in Topic) {
+                    if(typeof(n[Topic[T].nombre])!= 'undefined'){
+                        let fecha=(new Date((((timestampRead) - 18000) * 1000))).toISOString();
+                        fecha=("Fecha: " + (fecha.substring(0, 19)).replace('T', " Hora: "));
+                        if(fecha!=Topic[T].Labels[Topic[T].Labels.length-1]){
+                Topic[T].Values.push(parseFloat(n[Topic[T].nombre]['N']))
+                 Topic[T].Labels.push( fecha);
+                    Topic[T].Grafica.update()
+                    Topic[T] = Object.assign({}, Topic[T], (getMaxMinOfArray(Topic[T].Values, Topic[T].Labels)));
+                    ValuesMaxMin(Topic[T]);
+                        }
+                    }}
+            }
+        });
+    } catch (err) { 
+        alert("Error en :" + err.message);
+    }
 }

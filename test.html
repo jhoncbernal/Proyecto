@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <!-- Custom fonts for this template-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/fount.css" />
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" onunload="ConsultaDispositivos()">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="ConsultaDispositivos()">
     <!-- Navegacion-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <a class="navbar-brand" href="index.html">Dashboard</a>
@@ -72,15 +72,15 @@
                 <li class="breadcrumb-item active">Dispositivos</li>
             </ol>
             <center>
-                <form >
-                <div class="btn-group btn-group-justified">
-                    <input id='NombreDispositivo' type="text" class="form-control" id="inputdevice" placeholder="Nombre Dispositivo">
-                    <button onclick="CrearDispositivo()" class="btn btn-primary mb-2">
-                        <span class="fa fa-plus"></span> Crear</button>
-                    <button onclick="EliminarDispositivo()" class="btn bg-danger text-white mb-2">
-                        <span class="fa fa-trash"></span>Eliminar</button>
-                </div>
-            </form>
+                <form>
+                    <div class="btn-group btn-group-justified">
+                        <input id='NombreDispositivo' type="text" class="form-control" id="inputdevice" placeholder="Nombre Dispositivo">
+                        <button onclick="CrearDispositivo()" class="btn btn-primary mb-2">
+                            <span class="fa fa-plus"></span> Crear</button>
+                        <button onclick="EliminarDispositivo()" class="btn bg-danger text-white mb-2">
+                            <span class="fa fa-trash"></span>Eliminar</button>
+                    </div>
+                </form>
             </center>
             <center>
                 <div id="CardSend" class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8">
@@ -97,25 +97,31 @@
                                 <h3>
                                     <section style="margin: 1%">
                                         <label class="small">Nombre : </label>
-                                        <select class="btn text-white azul center-block" id="topic0" style="font-size:20px" onclick="ConsultaDispositivos()">
-                                       <option disabled selected>Seleccione un Dispositivo</option>
+                                        <select class="btn text-white azul center-block" id="topic0" style="font-size:20px" >
                                         </select>
+                                        <button onclick="ConsultaDispositivos()" class="btn text-white azul mb-2">
+                                            <span class="fa fa-refresh"></span> Actualizar</button>
                                         <br />
                                     </section>
+                                    
                                     <label class="small" style="margin-left: 3%">Accion : </label>
                                     <select class="btn text-white azul center-block" id="ACCION" onchange="topic0()">
-                                        <option value="Opciones"disabled selected>Opciones</option>
+                                        <option value="Opciones" disabled selected>Opciones</option>
                                         <option value="actualizar">Actualizar</option>
                                         <option value="obtener">Obtener</option>
                                     </select>
 
                                 </h3>
-                                <label for="usr" style="margin-left: 5%">
+                                <label for="ValSlider" style="margin-left: 5%">
                                     Valor :
                                     <output id="sliderVal0"></output>
+                                    <input name="ValSlider"id='value' type="range" min="0" max="100" onchange="topic0();onConnect()" />
                                 </label>
-                                <br />
-                                <input id='value0' type="range" min="0" max="100" onchange="topic0();onConnect()" />
+                                <br/>
+                                    <label for="OnOff"> Estado :
+                                        <input name="OnOff" id="state"type="checkbox" checked data-toggle="toggle" data-onstyle="azul" onchange="topic0('si');onConnect('si')">
+                                    </label>
+                                
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="chart.html">
                                 <span class="float-left">Ver Detalles</span>
