@@ -26,9 +26,9 @@ client.connect(options);
 function onConnect(tongle="no") {
 
     dato = document.getElementById("ACCION").value;
-
+    tipo =(+(document.getElementById("Tipo").checked))+'';
     try {
-        if (dato=="actualizar"){
+        if (dato=="actualizar"&&tipo=='1'){
             if (tongle=="si") {
             enviarmqtt(document.getElementById("topic0").value,(+(document.getElementById("state").checked))+'');
             } else{  

@@ -20,6 +20,9 @@
     <link href="css/sb-admin.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/fount.css" />
+    <!-- SDK AWS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.282.1/aws-sdk.js "></script>
+    <script src="js/IOTConfig.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="ConsultaDispositivos()">
@@ -96,20 +99,23 @@
                                 <label for="usr">Dispositivos: </label>
                                 <h3>
                                     <section style="margin: 1%">
+                                        <div class="btn-group btn-group-justified">
                                         <label class="small">Nombre : </label>
-                                        <select class="btn text-white azul center-block" id="topic0" style="font-size:20px" >
+                                        <select class="btn text-white azul center-block" id="topic0" style="font-size:21px" >
                                         </select>
-                                        <button onclick="ConsultaDispositivos()" class="btn text-white azul mb-2">
-                                            <span class="fa fa-refresh"></span> Actualizar</button>
+                                        <button onclick="ConsultaDispositivos()" class="btn text-white azul mb-2" >
+                                            <span class="fa fa-refresh"></span> </button>
+                                        </div>
                                         <br />
                                     </section>
-                                    
+                                    <section style="display: none">
                                     <label class="small" style="margin-left: 3%">Accion : </label>
-                                    <select class="btn text-white azul center-block" id="ACCION" onchange="topic0()">
+                                    <select class="btn text-white azul center-block" id="ACCION" >
                                         <option value="Opciones" disabled selected>Opciones</option>
-                                        <option value="actualizar">Actualizar</option>
+                                        <option value="actualizar"selected>Actualizar</option>
                                         <option value="obtener">Obtener</option>
                                     </select>
+                                </section>
 
                                 </h3>
                                 <label for="ValSlider" style="margin-left: 5%">
@@ -121,7 +127,8 @@
                                     <label for="OnOff"> Estado :
                                         <input name="OnOff" id="state"type="checkbox" checked data-toggle="toggle" data-onstyle="azul" onchange="topic0('si');onConnect('si')">
                                     </label>
-                                
+                                    <br/>
+                                    <input id="Tipo" type="checkbox" data-toggle="toggle" data-on="MQTT" data-off="AWS" data-onstyle="azul" >
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="chart.html">
                                 <span class="float-left">Ver Detalles</span>
@@ -158,8 +165,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script src="js/FirebaseConfig.js"></script>
     <script src="services/firebase.js"></script>
-    <!-- SDK AWS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.282.1/aws-sdk.js "></script>
+    
     <!-- Scripts personalizados para esta página-->
     <script src="js/testShadow.js"></script>
     <script src="js/cloudmqtt.js"></script>

@@ -1,11 +1,3 @@
-var iotdata = new AWS.IotData({
-    endpoint: 'a2imeekghuew2f.iot.us-east-1.amazonaws.com',
-    accessKeyId: 'AKIAIC33F3MSIFITLXGQ',
-    secretAccessKey: '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',
-    region: 'us-east-1',
-    apiVersion: '2015-05-28'
-});
-
 function topic0(tongle="no") {
 
     try {
